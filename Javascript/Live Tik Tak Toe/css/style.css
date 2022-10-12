@@ -1,0 +1,130 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: 'Merriweather sans', sans-serif;
+	color: #4c6986;
+}
+.title {
+	max-width: 500px;
+}
+.wrapper {
+	height: 800px;
+	max-width: 1440px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 40px;
+}
+h1 {
+	font-size: 60px;
+	font-weight: bold;
+}
+.restart {
+	/* background-color: aqua; */
+	width: 175px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50px;
+	border: 2px solid #4c6986;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.restart:hover {
+	background-color: #4c6986;
+	color: white;
+}
+
+.game {
+	width: 500px;
+	height: 500px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	color: #9a9a9a;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.header .player-x {
+	flex: 1;
+}
+.header .player-o {
+	flex: 1;
+}
+.tile-x {
+	color: #428ed7;
+}
+.tile-o {
+	color: #d78afb;
+}
+.header .player-o,
+.header .player-x {
+	border-bottom: 5px solid #eee;
+	padding-bottom: 8px;
+}
+.player-x.active {
+	color: #428ed7;
+
+	transition: all 0.8s ease;
+	border-color: #428ed7;
+}
+.player-o.active {
+	border-color: #d78afb;
+	color: #d78afb;
+	transition: all 0.5s ease;
+}
+.board {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 0px;
+	flex-grow: 1;
+	cursor: pointer;
+}
+
+.board-tile {
+	/* border: 2px solid #4c6986; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 80px;
+}
+
+.board-tile:not(:nth-child(3n)) {
+	border-right: 3px solid rgba(137, 163, 189, 0.8);
+}
+.board-tile:not(:nth-last-child(-n + 3)) {
+	border-bottom: 3px solid rgba(137, 163, 189, 0.8);
+}
+
+.board-tile:hover {
+	background-color: #eee;
+}
+
+.tile-winner span {
+	color: #23ce68;
+}
+
+@media only screen and (max-width: 1200px) {
+	.wrapper {
+		flex-direction: column;
+	}
+
+	.left {
+		margin-bottom: 50px;
+	}
+}
